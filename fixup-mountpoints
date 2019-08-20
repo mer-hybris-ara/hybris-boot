@@ -96,6 +96,18 @@ case "$DEVICE" in
             "$@"
         ;;
 
+    "ara")
+        sed -i \
+            -e 's block/platform/msm_sdcc.1/by-name/system mmcblk0p19 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/userdata mmcblk0p25 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/cache mmcblk0p20 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/boot mmcblk0p10 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/recovery mmcblk0p21 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/modem mmcblk0p1 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/persist mmcblk0p18 ' \
+            "$@"
+        ;;
+
     "pioneer"|"discovery"|"voyager")
         sed -i \
             -e 's block/bootdevice/by-name/LTALabel mmcblk0p7 ' \
